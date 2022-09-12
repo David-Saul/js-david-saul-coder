@@ -7,17 +7,17 @@ while(prestamo > 0){
             let prima = deuda / cuotas;
             let mensaje = `Su prima mensual a pagar sería de $ ${prima}`;
             alert(mensaje);
-        }else if (prestamo <= 80000 && cuotas <= 9){
+        }else if (prestamo > 30000 && prestamo <= 80000 && cuotas <= 9){
             let deuda = prestamo * 1.30;
             let prima = deuda / cuotas;
             let mensaje = `Su prima mensual a pagar sería de $ ${prima}`;
             alert(mensaje);
-        }else if (prestamo <= 150000 && cuotas <= 12){
+        }else if (prestamo > 80000 && prestamo <= 150000 && cuotas > 9 && cuotas <= 12){
             let deuda = prestamo * 1.55;
             let prima = deuda / cuotas;
             let mensaje = `Su prima mensual a pagar sería de $ ${prima}`;
             alert(mensaje);
-        }else if (prestamo <= 300000 && cuotas <= 18){
+        }else if (prestamo > 150000 && prestamo <= 300000 && cuotas > 12 && cuotas <= 18){
             let deuda = prestamo * 1.85;
             let prima = deuda / cuotas;
             let mensaje = `Su prima mensual a pagar sería de $ ${prima}`;
@@ -29,4 +29,4 @@ while(prestamo > 0){
     cuotas = Number(prompt("Ingrese la cantidad de cuotas"));
     }    
 
-prompt("Gracias por usar nuestro simulador.");
+alert("Gracias por usar nuestro simulador.");
