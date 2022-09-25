@@ -1,0 +1,9 @@
+img {
+    height: 300px;
+    width: auto;
+    background-color: aliceblue;
+    margin: 16px;
+    padding: 16px;
+    border: 3px blue;
+    border-radius: 15px;
+}
