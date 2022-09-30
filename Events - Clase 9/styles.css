@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(54, 54, 54);
+}
+img {
+    height: 320px;
+    width: auto;
+    background-color: rgb(170, 205, 235);
+    margin: 25px;
+    padding: 16px;
+    border: 3px blue;
+    border-radius: 15px;
+    float: left;
+}
+p {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: antiquewhite;
+}
+strong {
+    background-color: red;
+    color: antiquewhite;
+    font-size: 3rem;
+    margin-left: 25px;
+} 
+ul {
+    color: antiquewhite;
+}
+h1{
+    color: antiquewhite;
+}
+h2 {
+    color: antiquewhite;
+}
