@@ -1,0 +1,11 @@
+.img {
+    height: 300px;
+    width: auto;
+}
+.btn {
+    color: antiquewhite;
+    background-color: black;
+    width: 6rem;
+    height: auto;
+    border: 2px solid green;
+}
