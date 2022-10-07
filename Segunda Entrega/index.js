@@ -44,8 +44,11 @@ let comprarProducto = (producto) => {
             imagen: producto.imagen,
             cantidad: 1,
         })
+        localStorage.setItem("carrito", JSON.stringify(carrito));
     }
 }
+
+
 const buscarProducto = (s) => {
     console.log(s);
     let productoBuscado = productos.find(producto => producto.nombre.includes(s));
