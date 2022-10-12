@@ -35,7 +35,7 @@ let comprarProducto = (producto) => {
     let cafeExiste = carrito.find(item => item.id === producto.id);
     if(cafeExiste !== undefined){
         cafeExiste.precio = cafeExiste.precio + producto.precio;
-        cafeExiste.cantidad = cafeExiste.cantidad + 1;
+        cafeExiste.cantidad = cafeExiste.cantidad ++; /* Uso del sumador */
     }else{
         carrito.push({
             id: producto.id,
