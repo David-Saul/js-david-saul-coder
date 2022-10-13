@@ -5,6 +5,18 @@ let buscador = document.getElementById("buscador");
 let botonInput = document.getElementById("botonInput");
 let formulario = document.getElementById("formulario");
 
+/* Alert de bienvenida */
+Swal.fire({
+    title: 'Hola!',
+    text: 'Bienvenid@ a nuestra tienda de café!',
+    imageUrl: 'http://todocafe.es/wp-content/uploads/2020/10/cafe_espresso_expreso-1024x597.jpg',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Taza de espresso',
+});
+
+
+
 /* Array de mis productos */
 
 let productos = [
@@ -46,8 +58,11 @@ let comprarProducto = (producto) => {
         })
         localStorage.setItem("carrito", JSON.stringify(carrito));
     }
+    Swal.fire({
+        title: "Añadido al carrito",
+        icon: "success", 
+    })
 }
-
 
 const buscarProducto = (s) => {
     console.log(s);
