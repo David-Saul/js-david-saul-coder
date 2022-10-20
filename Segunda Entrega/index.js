@@ -17,30 +17,28 @@ Swal.fire({
 
 
 
-/* Array de mis productos */
 
-let productos = [
-    {id: 1, nombre: "Colombia" , precio: 3250, imagen:"https://cafesmoreno.com/wp-content/uploads/2020/12/bolsa-colombia-pico-cristobal-uai-1269x1693.jpg"},
-    {id: 2, nombre: "Costa Rica" , precio: 2950, imagen:"https://cafesmoreno.com/wp-content/uploads/2020/12/bolsa-costarica-tarrazu.jpg"},
-    {id: 3, nombre: "Brasil" , precio: 2750, imagen:"https://cafesmoreno.com/wp-content/uploads/2021/04/Bolsa-brasil-fazenda-bella-vista-uai-1269x1693.jpg"},
-    {id: 4, nombre: "Guatemala" , precio: 3150, imagen:"https://cafesmoreno.com/wp-content/uploads/2020/12/bolsa-guatemala-volcan-oro-1-uai-1269x1693.jpg"},
-];
+
 /* Creo carrito y funciones para compra */
 
 let carrito = [];
 let emails = [];
 
-productos.forEach(producto => {
-    let productoRender = document.createElement("div");
-    productoRender.innerHTML = `
-    <h2>Café Especialidad: ${producto.nombre}</h2>
-    <strong>Precio: $ ${producto.precio} x 250 gramos</strong>
-    <img class="img" src="${producto.imagen}">
-    <button class ="btn" id=${producto.id}>Agregar a Carrito</button>
-    `;
-    contenedor.append(productoRender);
-    const boton = document.getElementById(producto.id);
-    boton.addEventListener("click", () => comprarProducto(producto))
+fetch("./productos.json")
+.then(response => response.json())
+.then(productos => {
+    productos.forEach(producto => {
+        let productoRender = document.createElement("div");
+        productoRender.innerHTML = `
+        <h2>Café Especialidad: ${producto.nombre}</h2>
+        <strong>Precio: $ ${producto.precio} x 250 gramos</strong>
+        <img class="img" src="${producto.imagen}">
+        <button class ="btn" id=${producto.id}>Agregar a Carrito</button>
+        `;
+        contenedor.append(productoRender);
+        const boton = document.getElementById(producto.id);
+        boton.addEventListener("click", () => comprarProducto(producto))
+    })
 });
 
 let comprarProducto = (producto) => {
